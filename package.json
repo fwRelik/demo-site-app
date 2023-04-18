@@ -6,7 +6,7 @@
 		"dev": "next dev -p 4007",
 		"build": "next build",
 		"start": "next start",
-		"lint": "npx prettier --write ."
+		"format": "npx prettier --write ."
 	},
 	"dependencies": {
 		"@types/node": "18.15.11",
@@ -19,6 +19,7 @@
 		"typescript": "5.0.4"
 	},
 	"devDependencies": {
+		"prettier": "^2.8.7",
 		"sass": "^1.62.0"
 	}
 }
