@@ -4,6 +4,7 @@ import { FindApartmentProps } from './FindApartment.props';
 
 import RankingIcon from '/public/icons/ranking.svg';
 import HotelIcon from '/public/icons/hotel.svg';
+import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
 
 export const FindApartment = ({ ...props }: FindApartmentProps): JSX.Element => {
 	return (
@@ -22,8 +23,13 @@ export const FindApartment = ({ ...props }: FindApartmentProps): JSX.Element => 
 					</div>
 					<div>
 						<div className={styles.text_content}>
-							<h5>The Best Luxury Hotel</h5>
-							<h3>Find the right Apartment</h3>
+							<SectionTitles level={'h5'} pre_title>
+								The Best Luxury Hotel
+							</SectionTitles>
+							<SectionTitles level={'h3'} section_title>
+								Find the right Apartment
+							</SectionTitles>
+
 							<h2>Hotel & Resort for you</h2>
 							<p>
 								Over 39,000 people work for us in more than 70 countries all over the This breadth of
