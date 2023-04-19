@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { withLayout } from '@/layout/Layout';
 import { Welcome } from '@/components/Sections/Welcome/Welcome';
 import { FindApartment } from '@/components/Sections/FindApartment/FindApartment';
+import { Rooms } from '@/components/Sections/Rooms/Rooms';
 
 export function Home() {
 	return (
@@ -15,6 +16,7 @@ export function Home() {
 			<main>
 				<Welcome />
 				<FindApartment />
+				<Rooms />
 			</main>
 		</>
 	);
