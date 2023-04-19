@@ -1,0 +1,98 @@
+.find_apartment {
+	padding: 80px 0;
+
+	.wrapper {
+		display: grid;
+		grid: auto / auto 480px;
+		justify-content: space-around;
+
+		.room_images {
+			.transform_image {
+				transform: translate(20px, 80px);
+			}
+		}
+
+		.text_content {
+			font-family: var(--ff-type-2);
+
+			h2 {
+				font-size: 28px;
+				font-weight: 600;
+			}
+
+			h3 {
+				font-size: 46px;
+				font-weight: 600;
+			}
+
+			h5 {
+				margin: 10px 0px 10px 0px;
+				font-size: 18px;
+				color: var(--bg-main);
+				text-transform: uppercase;
+			}
+
+			p {
+				margin: 20px 0;
+				font-family: var(--ff-type-1);
+				font-size: 18px;
+				color: var(--color-secondary);
+			}
+		}
+
+		.advantages {
+			display: grid;
+			gap: 20px;
+
+			& > div {
+				position: relative;
+				display: grid;
+				grid: auto / 40px 1fr;
+				gap: 10px 20px;
+				cursor: pointer;
+				transition: var(--transition-1);
+
+				border: 1px solid var(--color-main);
+				padding: 15px 20px;
+
+				svg {
+					fill: var(--bg-main);
+				}
+
+				h5 {
+					font-family: var(--ff-type-2);
+					font-size: 22px;
+					font-weight: 500;
+					align-self: center;
+				}
+
+				p {
+					font-weight: 300;
+					grid-column: 2 / 3;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					display: block;
+					inset: 0 999px 0 0px;
+					background-color: var(--bg-main);
+					transition: var(--transition-2);
+					z-index: -1;
+				}
+
+				&:hover {
+					color: var(--white);
+
+					svg {
+						fill: var(--white);
+					}
+
+					&::after {
+						inset: 0 0 0 0;
+					}
+				}
+			}
+		}
+	}
+}

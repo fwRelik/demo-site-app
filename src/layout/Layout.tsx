@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react';
 import { LayoutProps } from './Layout.props';
+import { Header } from './Header/Header';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
 		<>
-			<h2>Header</h2>
+			<Header />
 
 			{children}
 
