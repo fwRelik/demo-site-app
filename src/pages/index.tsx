@@ -3,6 +3,7 @@ import { withLayout } from '@/layout/Layout';
 import { Welcome } from '@/components/Sections/Welcome/Welcome';
 import { FindApartment } from '@/components/Sections/FindApartment/FindApartment';
 import { Rooms } from '@/components/Sections/Rooms/Rooms';
+import { Facilities } from '@/components/Sections/Facilities/Facilities';
 
 export function Home() {
 	return (
@@ -17,6 +18,7 @@ export function Home() {
 				<Welcome />
 				<FindApartment />
 				<Rooms />
+				<Facilities />
 			</main>
 		</>
 	);
