@@ -6,7 +6,7 @@ import { Button } from '@/components/Button/Button';
 
 export const Rooms = ({ ...props }: RoomsProps): JSX.Element => {
 	return (
-		<section className={styles.rooms}>
+		<section className={styles.rooms} {...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div>

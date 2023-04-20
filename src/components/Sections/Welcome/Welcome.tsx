@@ -1,13 +1,12 @@
 import styles from './Welcome.module.scss';
 import { WelcomeProps } from './Welcome.props';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Button } from '@/components/Button/Button';
 import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
 
 export const Welcome = ({ ...props }: WelcomeProps): JSX.Element => {
 	return (
-		<section className={styles.welcome}>
+		<section className={styles.welcome} {...props}>
 			<div className='container'>
 				<div className={styles.content}>
 					<SectionTitles level={'h5'} className={styles.pre_title} pre_title>

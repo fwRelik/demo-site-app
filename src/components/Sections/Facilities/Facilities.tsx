@@ -12,7 +12,7 @@ import ShowerIcon from '/public/icons/shower.svg';
 
 export const Facilities = ({ ...props }: FacilitiesProps): JSX.Element => {
 	return (
-		<section className={styles.facilities}>
+		<section className={styles.facilities} {...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div>

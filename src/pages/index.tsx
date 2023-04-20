@@ -1,9 +1,13 @@
 import Head from 'next/head';
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import { withLayout } from '@/layout/Layout';
 import { Welcome } from '@/components/Sections/Welcome/Welcome';
 import { FindApartment } from '@/components/Sections/FindApartment/FindApartment';
 import { Rooms } from '@/components/Sections/Rooms/Rooms';
 import { Facilities } from '@/components/Sections/Facilities/Facilities';
+import { Offers } from '@/components/Sections/Offers/Offers';
 
 export function Home() {
 	return (
@@ -19,6 +23,7 @@ export function Home() {
 				<FindApartment />
 				<Rooms />
 				<Facilities />
+				<Offers />
 			</main>
 		</>
 	);

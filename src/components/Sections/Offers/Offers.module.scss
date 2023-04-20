@@ -1,0 +1,73 @@
+.offers {
+	padding: 100px 0;
+
+	.wrapper {
+		display: grid;
+		grid: repeat(2, auto) / 1fr;
+		gap: 50px;
+
+		.section_title,
+		.description {
+			text-align: center;
+			margin: 0;
+		}
+
+		.cards {
+			display: grid;
+			grid: auto / repeat(3, 1fr);
+			grid-auto-rows: 1fr;
+			padding: 0 130px;
+			gap: 30px;
+
+			& > div {
+				img {
+					width: 100%;
+					object-fit: contain;
+				}
+
+				.information,
+				.information a {
+					text-transform: uppercase;
+					text-decoration: none;
+					color: var(--bg-main);
+					font-size: 13px;
+					font-weight: 300;
+					margin: 0 0 15px 0;
+
+					time {
+						margin-right: 10px;
+					}
+				}
+
+				h2 a {
+					color: var(--black);
+					text-decoration: none;
+					font-size: 34px;
+					font-family: var(--ff-type-2);
+					font-weight: 700;
+				}
+
+				p {
+					font-size: 17px;
+					font-weight: 300;
+					margin: 15px 0;
+				}
+
+				.read_more {
+					text-decoration: none;
+					text-transform: uppercase;
+					color: var(--bg-main);
+					letter-spacing: 4px;
+					margin-top: 15px;
+					font-size: 13px;
+
+					svg {
+						height: 13px;
+						fill: var(--bg-main);
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
+}
