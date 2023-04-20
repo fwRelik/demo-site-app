@@ -12,7 +12,7 @@ import { Button } from '@/components/Button/Button';
 
 export const Footer = ({ ...props }: FooterProps): JSX.Element => {
 	return (
-		<footer className={styles.footer}>
+		<footer id='contact' className={styles.footer}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div className={styles.logo_wrapper}>

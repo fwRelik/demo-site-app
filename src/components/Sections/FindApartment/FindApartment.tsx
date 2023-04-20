@@ -8,7 +8,7 @@ import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
 
 export const FindApartment = ({ ...props }: FindApartmentProps): JSX.Element => {
 	return (
-		<section className={styles.find_apartment} {...props}>
+		<section id='about' className={styles.find_apartment} {...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div className={styles.room_images}>

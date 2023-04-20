@@ -133,3 +133,22 @@
 		}
 	}
 }
+
+@media (max-width: 992px) {
+	.rooms {
+		.room_cards {
+			grid: 400px/1fr;
+			grid-auto-rows: 400px;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.rooms {
+		.room_cards {
+			grid: 400px/1fr;
+			grid-auto-rows: 400px;
+			padding: 0 20px;
+		}
+	}
+}

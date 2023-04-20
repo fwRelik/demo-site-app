@@ -120,3 +120,29 @@
 		}
 	}
 }
+
+@media (max-width: 992px) {
+	.footer {
+		.wrapper {
+			grid: auto / repeat(2, 1fr);
+			gap: 70px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		.wrapper {
+			grid: auto / 1fr;
+			gap: 70px;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.footer {
+		.wrapper {
+			padding: 0 30px;
+		}
+	}
+}

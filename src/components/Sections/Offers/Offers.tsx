@@ -10,14 +10,17 @@ export const Offers = ({ ...props }: OffersProps): JSX.Element => {
 	const sizes = { height: 290, width: 390 };
 
 	return (
-		<section className={styles.offers} {...props}>
+		<section id='offers' className={styles.offers} {...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div>
 						<SectionTitles className={styles.section_title} level={'h3'} section_title>
 							News & Offers
 						</SectionTitles>
-						<p className={styles.description}></p>
+						<p className={styles.description}>
+							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+							spring which I enjoy with my whole heart.
+						</p>
 					</div>
 					<div className={styles.cards}>
 						<div>
