@@ -9,7 +9,7 @@ export const Header = ({ ...props }: HeaderProps): JSX.Element => {
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<a href='#' className={styles.logo}>
-						<Image src='/images/logo.png' height={22} width={125} alt={'Site Logl'} />
+						<Image src='/images/logo.png' height={22} width={125} alt={'Site Logo'} />
 					</a>
 					<nav className={styles.navigation}>
 						<ul className={styles.puncts}>

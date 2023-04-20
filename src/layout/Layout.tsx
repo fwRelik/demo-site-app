@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import { LayoutProps } from './Layout.props';
 import { Header } from './Header/Header';
+import { Footer } from './Footer/Footer';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
@@ -9,7 +10,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
 			{children}
 
-			<h2>Footer</h2>
+			<Footer />
 		</>
 	);
 };
