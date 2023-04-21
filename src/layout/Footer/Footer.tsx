@@ -9,18 +9,18 @@ import FacebookIcon from '/public/icons/facebook.svg';
 import PinterestIcon from '/public/icons/pinterest.svg';
 import InstagramIcon from '/public/icons/instagram.svg';
 import { Button } from '@/components/Button/Button';
+import useLangaugePack from '@/hooks/useLanguagePack';
 
 export const Footer = ({ ...props }: FooterProps): JSX.Element => {
+	const { t } = useLangaugePack();
+
 	return (
 		<footer id='contact' className={styles.footer}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div className={styles.logo_wrapper}>
 						<Image src='/images/logo.png' height={22} width={125} alt={'Site Logo'} />
-						<p>
-							Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. Morbi consequat risus
-							consequat, porttitor orci sit amet, iaculis nisl.
-						</p>
+						<p>{t('footer_description')}</p>
 						<div className={styles.icons}>
 							<ul>
 								<li>
@@ -37,7 +37,7 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
 					</div>
 					<div className={styles.general_wrapper}>
 						<SectionTitles className={styles.list_title} level={'h3'}>
-							General
+							{t('footer_general_title')}
 						</SectionTitles>
 						<ul>
 							<li>
@@ -60,7 +60,7 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
 					</div>
 					<div className={styles.contact_wrapper}>
 						<SectionTitles className={styles.list_title} level={'h3'}>
-							Contact Us
+							{t('footer_contact_us_title')}
 						</SectionTitles>
 						<ul>
 							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
@@ -79,7 +79,7 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
 					</div>
 					<div className={styles.newsletter_wrapper}>
 						<SectionTitles className={styles.list_title} level={'h3'}>
-							Newsletter
+							{t('footer_newsletter_title')}
 						</SectionTitles>
 						<ul>
 							<li>

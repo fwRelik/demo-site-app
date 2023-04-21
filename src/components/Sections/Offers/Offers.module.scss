@@ -12,6 +12,11 @@
 			margin: 0;
 		}
 
+		.description {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
 		.cards {
 			display: grid;
 			grid: auto / repeat(3, 1fr);

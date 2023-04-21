@@ -5,8 +5,11 @@ import { FindApartmentProps } from './FindApartment.props';
 import RankingIcon from '/public/icons/ranking.svg';
 import HotelIcon from '/public/icons/hotel.svg';
 import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
+import useLangaugePack from '@/hooks/useLanguagePack';
 
 export const FindApartment = ({ ...props }: FindApartmentProps): JSX.Element => {
+	const { t } = useLangaugePack();
+
 	return (
 		<section id='about' className={styles.find_apartment} {...props}>
 			<div className='container'>
@@ -24,35 +27,26 @@ export const FindApartment = ({ ...props }: FindApartmentProps): JSX.Element => 
 					<div>
 						<div className={styles.text_content}>
 							<SectionTitles level={'h5'} pre_title>
-								The Best Luxury Hotel
+								{t('about_pre_title')}
 							</SectionTitles>
 							<SectionTitles level={'h3'} section_title>
-								Find the right Apartment
+								{t('about_title')}
 							</SectionTitles>
 
-							<h2>Hotel & Resort for you</h2>
-							<p>
-								Over 39,000 people work for us in more than 70 countries all over the This breadth of
-								global coverage, combined with specialist services
-							</p>
+							<h2>{t('about_subtitle')}</h2>
+							<p>{t('about_description')}</p>
 						</div>
 
 						<div className={styles.advantages}>
 							<div>
 								<HotelIcon />
-								<h5>5 Star Hotel In World</h5>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati earum quibusdam
-									numquam dolor.
-								</p>
+								<h5>{t('about_advantages_1')}</h5>
+								<p>{t('about_advantages_description_1')}</p>
 							</div>
 							<div>
 								<RankingIcon />
-								<h5>Best Environment</h5>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, repellat illo rem
-									accusantium.
-								</p>
+								<h5>{t('about_advantages_2')}</h5>
+								<p>{t('about_advantages_description_2')}</p>
 							</div>
 						</div>
 					</div>

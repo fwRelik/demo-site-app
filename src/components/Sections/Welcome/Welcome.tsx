@@ -3,24 +3,24 @@ import { WelcomeProps } from './Welcome.props';
 import { Carousel } from 'react-responsive-carousel';
 import { Button } from '@/components/Button/Button';
 import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
+import useLangaugePack from '@/hooks/useLanguagePack';
 
 export const Welcome = ({ ...props }: WelcomeProps): JSX.Element => {
+	const { t } = useLangaugePack();
+
 	return (
 		<section id='home' className={styles.welcome} {...props}>
 			<div className='container'>
 				<div className={styles.content}>
 					<SectionTitles level={'h5'} className={styles.pre_title} pre_title>
-						This is Luxury Hotel
+						{t('welcome_pre_title')}
 					</SectionTitles>
 
-					<h1 className={styles.title}>Superior Hotel In World</h1>
+					<h1 className={styles.title}>{t('welcome_title')}</h1>
 					<span className={styles.line}></span>
-					<p className={styles.description}>
-						A wonderful serenity has taken possession of my entrie soul, like these sweet mornings of spring
-						which I enjoy with my whole heart.
-					</p>
+					<p className={styles.description}>{t('welcome_description')}</p>
 					<Button className={styles.button} href='#'>
-						Rooms & Suits
+						{t('welcome_button_text')}
 					</Button>
 				</div>
 			</div>

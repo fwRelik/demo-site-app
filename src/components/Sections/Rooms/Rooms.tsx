@@ -3,18 +3,21 @@ import { RoomsProps } from './Rooms.props';
 
 import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
 import { Button } from '@/components/Button/Button';
+import useLangaugePack from '@/hooks/useLanguagePack';
 
 export const Rooms = ({ ...props }: RoomsProps): JSX.Element => {
+	const { t } = useLangaugePack();
+
 	return (
 		<section id='room-suites' className={styles.rooms} {...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
 					<div>
 						<SectionTitles className={styles.pre_title} level={'h5'} pre_title>
-							The Luxury Hotel
+							{t('rooms_pre_title')}
 						</SectionTitles>
 						<SectionTitles className={styles.section_title} level={'h3'} section_title>
-							Rooms & Suites
+							{t('rooms_title')}
 						</SectionTitles>
 					</div>
 					<div className={styles.room_cards}>

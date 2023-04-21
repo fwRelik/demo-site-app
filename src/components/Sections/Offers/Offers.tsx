@@ -5,8 +5,10 @@ import { OffersProps } from './Offers.props';
 import { SectionTitles } from '@/components/SectionTitles/SectionTitles';
 
 import ArrowRightIcon from '/public/icons/arrow-right.svg';
+import useLangaugePack from '@/hooks/useLanguagePack';
 
 export const Offers = ({ ...props }: OffersProps): JSX.Element => {
+	const { t } = useLangaugePack();
 	const sizes = { height: 290, width: 390 };
 
 	return (
@@ -15,12 +17,9 @@ export const Offers = ({ ...props }: OffersProps): JSX.Element => {
 				<div className={styles.wrapper}>
 					<div>
 						<SectionTitles className={styles.section_title} level={'h3'} section_title>
-							News & Offers
+							{t('offers_title')}
 						</SectionTitles>
-						<p className={styles.description}>
-							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
-							spring which I enjoy with my whole heart.
-						</p>
+						<p className={styles.description}>{t('offers_description')}</p>
 					</div>
 					<div className={styles.cards}>
 						<div>
@@ -29,14 +28,14 @@ export const Offers = ({ ...props }: OffersProps): JSX.Element => {
 							</a>
 							<div className={styles.information}>
 								<time>August 20, 2022</time>
-								<a href='#'>Comment (5)</a>
+								<a href='#'>{t('offers_comment')} (5)</a>
 							</div>
 							<h2>
 								<a href='#'>Camping in Italy</a>
 							</h2>
 							<p>Quisque pretium fermentum quam, sit amet cursus ante sollicitudin </p>
 							<a href='#' className={styles.read_more}>
-								Read More <ArrowRightIcon />
+								{t('offers_button_text')} <ArrowRightIcon />
 							</a>
 						</div>
 						<div>
@@ -45,14 +44,14 @@ export const Offers = ({ ...props }: OffersProps): JSX.Element => {
 							</a>
 							<div className={styles.information}>
 								<time>August 20, 2022</time>
-								<a href='#'>Comment (5)</a>
+								<a href='#'>{t('offers_comment')} (5)</a>
 							</div>
 							<h2>
 								<a href='#'>Camping in Italy</a>
 							</h2>
 							<p>Quisque pretium fermentum quam, sit amet cursus ante sollicitudin </p>
 							<a href='#' className={styles.read_more}>
-								Read More <ArrowRightIcon />
+								{t('offers_button_text')} <ArrowRightIcon />
 							</a>
 						</div>
 						<div>
@@ -61,14 +60,14 @@ export const Offers = ({ ...props }: OffersProps): JSX.Element => {
 							</a>
 							<div className={styles.information}>
 								<time>August 20, 2022</time>
-								<a href='#'>Comment (5)</a>
+								<a href='#'>{t('offers_comment')} (5)</a>
 							</div>
 							<h2>
 								<a href='#'>Camping in Italy</a>
 							</h2>
 							<p>Quisque pretium fermentum quam, sit amet cursus ante sollicitudin </p>
 							<a href='#' className={styles.read_more}>
-								Read More <ArrowRightIcon />
+								{t('offers_button_text')} <ArrowRightIcon />
 							</a>
 						</div>
 					</div>

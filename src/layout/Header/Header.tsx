@@ -4,12 +4,31 @@ import styles from './Header.module.scss';
 import { HeaderProps } from './Header.props';
 import { Button } from '@/components/Button/Button';
 import { useEffect, useState } from 'react';
+import useLangaugePack from '@/hooks/useLanguagePack';
+import { SelectedResourceType } from '@/features/language/languageSlice';
 
-export const Header = ({ offset = 10, ...props }: HeaderProps): JSX.Element => {
+export const Header = ({ offset = 10, onLanguageButton = true, ...props }: HeaderProps): JSX.Element => {
+	const { t, changeLanguage, selectedResource, languagePackages } = useLangaugePack();
 	const [active, setActive] = useState<boolean>(false);
 	const [mobileActive, setMobileActive] = useState<boolean>(false);
 
 	const scrollHandler = () => (window.scrollY >= offset ? setActive(true) : setActive(false));
+
+	const languageSelect = onLanguageButton ? (
+		<select
+			name='language'
+			className={styles.lang}
+			value={selectedResource}
+			onChange={target => changeLanguage(target.target.value as SelectedResourceType)}>
+			{languagePackages.map(lang => (
+				<option key={lang} value={lang}>
+					{lang.toUpperCase()}
+				</option>
+			))}
+		</select>
+	) : (
+		''
+	);
 
 	useEffect(() => {
 		window.addEventListener('scroll', scrollHandler);
@@ -33,23 +52,24 @@ export const Header = ({ offset = 10, ...props }: HeaderProps): JSX.Element => {
 								[styles.active]: mobileActive,
 							})}>
 							<li className={styles.punct}>
-								<a href='#home'>Home</a>
+								<a href='#home'>{t('header_home')}</a>
 							</li>
 							<li className={styles.punct}>
-								<a href='#about'>About</a>
+								<a href='#about'>{t('header_about')}</a>
 							</li>
 							<li className={styles.punct}>
-								<a href='#room-suites'>Rooms & Suites</a>
+								<a href='#room-suites'>{t('header_rooms_suites')}</a>
 							</li>
 							<li className={styles.punct}>
-								<a href='#facilities'>facilities</a>
+								<a href='#facilities'>{t('header_facilities')}</a>
 							</li>
 							<li className={styles.punct}>
-								<a href='#offers'>Offers</a>
+								<a href='#offers'>{t('header_offers')}</a>
 							</li>
 							<li className={styles.punct}>
-								<a href='#contact'>Contact</a>
+								<a href='#contact'>{t('header_contact')}</a>
 							</li>
+							<li className={styles.punct}>{languageSelect}</li>
 						</ul>
 						<div className={styles.button}>
 							<Button>Get a Quote</Button>
