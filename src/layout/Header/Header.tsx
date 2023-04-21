@@ -46,11 +46,12 @@ export const Header = ({ offset = 10, onLanguageButton = true, ...props }: Heade
 					<a href='#' className={styles.logo}>
 						<Image src='/images/logo.png' height={22} width={125} alt={'Site Logo'} />
 					</a>
-					<nav className={styles.navigation} onClick={() => setMobileActive(!mobileActive)}>
+					<nav className={styles.navigation}>
 						<ul
 							className={cn(styles.puncts, {
 								[styles.active]: mobileActive,
-							})}>
+							})}
+							onClick={() => setMobileActive(!mobileActive)}>
 							<li className={styles.punct}>
 								<a href='#home'>{t('header_home')}</a>
 							</li>
@@ -69,16 +70,17 @@ export const Header = ({ offset = 10, onLanguageButton = true, ...props }: Heade
 							<li className={styles.punct}>
 								<a href='#contact'>{t('header_contact')}</a>
 							</li>
-							<li className={styles.punct}>{languageSelect}</li>
 						</ul>
+						{languageSelect}
 						<div className={styles.button}>
 							<Button>Get a Quote</Button>
 						</div>
-						<span
-							className={cn(styles.mobile_button, {
-								[styles.active]: mobileActive,
-							})}
-							onClick={() => setMobileActive(!mobileActive)}></span>
+						<div className={styles.mobile_button} onClick={() => setMobileActive(!mobileActive)}>
+							<span
+								className={cn({
+									[styles.active]: mobileActive,
+								})}></span>
+						</div>
 					</nav>
 				</div>
 			</div>

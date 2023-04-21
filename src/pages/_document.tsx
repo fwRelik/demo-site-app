@@ -10,7 +10,7 @@ export default function Document() {
 					href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap'
 					rel='stylesheet'
 				/>
-				<link rel='stylesheet' href='css/bootstrap-reboot.min.css' />
+				<link rel='stylesheet' href='/css/bootstrap-reboot.min.css' />
 			</Head>
 			<body>
 				<Main />

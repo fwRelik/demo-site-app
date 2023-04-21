@@ -32,7 +32,7 @@
 			display: flex;
 			list-style-type: none;
 			align-items: center;
-			gap: 10px;
+			// gap: 10px;
 			padding: 0;
 			margin: 0;
 
@@ -51,11 +51,17 @@
 						color: var(--bg-main);
 					}
 				}
+			}
+		}
 
-				.lang {
-					height: 100%;
-					border-radius: 5px;
-				}
+		.lang {
+			background: none;
+			border: none;
+			color: var(--white);
+
+			option {
+				height: inherit;
+				color: var(--black);
 			}
 		}
 
@@ -70,7 +76,7 @@
 	}
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
 	.header {
 		background-color: var(--black);
 
@@ -94,48 +100,61 @@
 				}
 			}
 
+			.lang {
+				background: none;
+				border: none;
+
+				option {
+					height: inherit;
+				}
+			}
+
 			.button {
 				display: none;
 			}
 
 			.mobile_button {
-				position: relative;
 				display: block;
-				background-color: var(--white);
-				margin: 10px;
-				width: 40px;
-				height: 2px;
 
-				&::before,
-				&::after {
-					content: '';
+				span {
 					background-color: var(--white);
 					display: block;
-					width: inherit;
-					height: inherit;
-					position: absolute;
-					transition: var(--transition-1);
-				}
+					position: relative;
+					margin: 10px;
+					width: 40px;
+					height: 2px;
 
-				&::before {
-					top: -10px;
-					left: 0;
-				}
-
-				&::after {
-					bottom: -10px;
-					left: 0;
-				}
-
-				&.active {
-					background: transparent;
+					&::before,
+					&::after {
+						content: '';
+						background-color: var(--white);
+						display: block;
+						width: inherit;
+						height: inherit;
+						position: absolute;
+						transition: var(--transition-1);
+					}
 
 					&::before {
-						transform: rotate(405deg) translate(13px, -1px);
+						top: -10px;
+						left: 0;
 					}
 
 					&::after {
-						transform: rotate(-405deg) translate(15px, 0px);
+						bottom: -10px;
+						left: 0;
+					}
+
+					&.active {
+						background: transparent;
+
+						&::before {
+							transform: rotate(405deg) translate(13px, -1px);
+						}
+
+						&::after {
+							transform: rotate(-405deg) translate(15px, 0px);
+						}
 					}
 				}
 			}
