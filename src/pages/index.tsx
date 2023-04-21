@@ -1,15 +1,26 @@
+import { Facilities } from '@/components/Sections/Facilities/Facilities';
+import { FindApartment } from '@/components/Sections/FindApartment/FindApartment';
+import { Offers } from '@/components/Sections/Offers/Offers';
+import { Rooms } from '@/components/Sections/Rooms/Rooms';
+import { Welcome } from '@/components/Sections/Welcome/Welcome';
+import { APIUrls } from '@/configs/api.config';
+import { LanguagePackType, updateLanguagePackage } from '@/features/language/languageSlice';
+import { withLayout } from '@/layout/Layout';
+import axios from 'axios';
 import Head from 'next/head';
-
+import { useDispatch } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { withLayout } from '@/layout/Layout';
-import { Welcome } from '@/components/Sections/Welcome/Welcome';
-import { FindApartment } from '@/components/Sections/FindApartment/FindApartment';
-import { Rooms } from '@/components/Sections/Rooms/Rooms';
-import { Facilities } from '@/components/Sections/Facilities/Facilities';
-import { Offers } from '@/components/Sections/Offers/Offers';
+export function Home(): JSX.Element {
+	const dispatch = useDispatch();
 
-export function Home() {
+	(async () => {
+		const { data } = await axios.get<LanguagePackType>(APIUrls.LanguagePackage);
+		if (!data) return;
+
+		dispatch(updateLanguagePackage(data));
+	})();
+
 	return (
 		<>
 			<Head>

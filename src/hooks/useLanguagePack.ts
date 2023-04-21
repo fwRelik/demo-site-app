@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { RootState } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { ResourceFieldsType, SelectedResourceType, selectLanguage } from '@/features/language/languageSlice';
