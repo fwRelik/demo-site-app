@@ -1,11 +1,11 @@
 {
-	"name": "app",
-	"version": "0.1.0",
+	"name": "demo-site-app",
+	"version": "0.1.0-alfa",
 	"private": true,
 	"scripts": {
 		"dev": "next dev -p 4007",
 		"build": "next build",
-		"start": "next start",
+		"start": "next start -p 4007",
 		"format": "npx prettier --write ."
 	},
 	"dependencies": {
