@@ -1,5 +1,7 @@
 # demo-site-app
 
+![GitHub last commit](https://img.shields.io/github/last-commit/fwRelik/demo-site-app) [![demo-site-app-publish](https://github.com/fwRelik/demo-site-app/actions/workflows/publish.yml/badge.svg)](https://github.com/fwRelik/demo-site-app/actions/workflows/publish.yml)
+
 The application consumes a self-written API [demo-site-api.](https://github.com/fwRelik/demo-site-api)
 
 Implemented aspects such as:
