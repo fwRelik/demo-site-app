@@ -6,11 +6,16 @@ on:
       - main
 
 env:
-  IMAGE_NAME: fwrelik/demo-site-app
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,7 +29,7 @@ jobs:
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -32,13 +37,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: |
-            ${{ env.IMAGE_NAME }}
-            ghcr.io/${{ github.repository }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
+          context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
