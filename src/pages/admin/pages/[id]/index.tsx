@@ -1,7 +1,9 @@
 import { Form } from '@/components/Form/Form';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { AdminHeader } from '@/components/AdminHeader/AdminHeader';
 import { APIUrls } from '@/configs/api.config';
 import { IRoomPage } from '@/interfaces/RoomPage.interface';
-import { withAdminLayout } from '@/layout/AdminLayout/AdminLayout';
+import { DEFAULT_LIST, withAdminLayout } from '@/layout/AdminLayout/AdminLayout';
 import Error404 from '@/pages/404';
 import axios from 'axios';
 import Head from 'next/head';
@@ -20,6 +22,11 @@ export function EditPage() {
 			if (key !== '_id' && typeof value === 'string') return { [key]: value };
 		})
 	);
+
+	const list = {
+		name: 'Language pack',
+		link: `${id}/language-pack`,
+	};
 
 	const saveHandler = async (data: Record<string, string>) => {
 		if (!pageData) return;
@@ -52,6 +59,9 @@ export function EditPage() {
 				<title>Page {pageData?.title} edit</title>
 			</Head>
 
+			<AdminHeader />
+			<Sidebar list={[DEFAULT_LIST, list]} />
+
 			{!isNotFound ? (
 				<>
 					<h1>Title: {pageData?.title}</h1>
@@ -65,4 +75,4 @@ export function EditPage() {
 	);
 }
 
-export default withAdminLayout(EditPage);
+export default withAdminLayout(EditPage, { panel: false });

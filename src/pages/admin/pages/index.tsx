@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button/Button';
 import { PageCard } from '@/components/PageCard/PageCard';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
-import { UserHead } from '@/components/UserHead/UserHead';
+import { AdminHeader } from '@/components/AdminHeader/AdminHeader';
 import { APIUrls } from '@/configs/api.config';
 import { IMainPage } from '@/interfaces/MainPage.interface';
 import { IRoomPage } from '@/interfaces/RoomPage.interface';
@@ -55,7 +55,7 @@ export function Pages() {
 				<title>Pages</title>
 			</Head>
 
-			<UserHead userName={'Admin'} />
+			<AdminHeader userName={'Admin'} />
 			<Sidebar list={[DEFAULT_LIST, list]} />
 
 			<PageCard pages={pagesData} />

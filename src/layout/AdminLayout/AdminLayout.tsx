@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { AdminLayoutProps } from './AdminLayout.props';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
-import { UserHead } from '@/components/UserHead/UserHead';
+import { AdminHeader } from '@/components/AdminHeader/AdminHeader';
 import Head from 'next/head';
 
 import styles from './AdminLayout.module.scss';
@@ -19,7 +19,7 @@ const AdminLayout = ({ children, options: { list = [], panel = true } = {} }: Ad
 
 			{panel ? (
 				<>
-					<UserHead userName={'Admin'} />
+					<AdminHeader userName={'Admin'} />
 					<Sidebar list={[DEFAULT_LIST, ...list]} />
 				</>
 			) : (

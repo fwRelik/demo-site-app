@@ -1,9 +1,9 @@
-import { UserHeadProps } from './UserHead.props';
-import styles from './UserHead.module.scss';
+import { AdminHeaderProps } from './AdminHeader.props';
+import styles from './AdminHeader.module.scss';
 
 import UserIcon from '/public/icons/user.svg';
 
-export const UserHead = ({ userName, className, children, ...props }: UserHeadProps): JSX.Element => {
+export const AdminHeader = ({ userName, className, children, ...props }: AdminHeaderProps): JSX.Element => {
 	return (
 		<div className={styles.head}>
 			<div className={styles.information}>

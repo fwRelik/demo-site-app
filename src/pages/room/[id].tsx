@@ -28,7 +28,8 @@ export function RoomPage() {
 	return (
 		<>
 			<Head>
-				<title>Pages</title>
+				<title>{page?.title}</title>
+				<meta name='description' content={page?.description} />
 			</Head>
 
 			<main>
