@@ -1,0 +1,17 @@
+.section_head {
+	font-family: var(--ff-type-2);
+
+	
+	&.pre_title {
+		margin: 10px 0px 10px 0px;
+		font-size: 18px;
+		color: var(--bg-main);
+		text-transform: uppercase;
+	}
+
+	
+	&.section_title {
+		font-size: 46px;
+		font-weight: 600;
+	}
+}
