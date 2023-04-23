@@ -35,6 +35,14 @@ Implemented aspects such as:
 
 **In the default image, the path to the API is http://localhost:4006**
 
+## Launching a project for develepment
+
+```sh
+> npm install
+
+> npm run dev
+```
+
 ## **Important!**
 
 The `.env.local` file is **required**, where the api address is written. _This file is also used during build._
