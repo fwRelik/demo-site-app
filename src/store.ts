@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from './features/language/languageSlice';
+import pagesReducer from './features/pages/pagesSlice';
 
 export const store = configureStore({
 	reducer: {
 		languageReducer,
+		pagesReducer,
 	},
 });
 

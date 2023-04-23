@@ -4,7 +4,12 @@ import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { UserHead } from '@/components/UserHead/UserHead';
 import Head from 'next/head';
 
-const AdminLayout = ({ children }: AdminLayoutProps): JSX.Element => {
+import styles from './AdminLayout.module.scss';
+import { IPunct } from '@/components/Sidebar/Sidebar.props';
+
+export const DEFAULT_LIST = { name: 'Pages', link: '/admin/pages' };
+
+const AdminLayout = ({ children, options: { list = [], panel = true } = {} }: AdminLayoutProps): JSX.Element => {
 	return (
 		<>
 			<Head>
@@ -12,18 +17,32 @@ const AdminLayout = ({ children }: AdminLayoutProps): JSX.Element => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 			</Head>
 
-			<UserHead userName={'Admin'} />
-			<Sidebar />
+			{panel ? (
+				<>
+					<UserHead userName={'Admin'} />
+					<Sidebar list={[DEFAULT_LIST, ...list]} />
+				</>
+			) : (
+				''
+			)}
 
-			<main>{children}</main>
+			<main className={styles.admin}>
+				<div className={styles.content}>{children}</div>
+			</main>
 		</>
 	);
 };
 
-export const withAdminLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+export const withAdminLayout = <T extends Record<string, unknown>>(
+	Component: FunctionComponent<T>,
+	options?: {
+		list?: IPunct[];
+		panel?: boolean;
+	}
+) => {
 	return function withLayoutComponent(props: T): JSX.Element {
 		return (
-			<AdminLayout>
+			<AdminLayout options={options}>
 				<Component {...props} />
 			</AdminLayout>
 		);

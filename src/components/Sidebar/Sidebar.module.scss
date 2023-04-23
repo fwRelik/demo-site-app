@@ -1,7 +1,7 @@
 .sidebar {
 	background-color: var(--color-ternary);
 	position: fixed;
-	inset: 0 calc(100vw - var(--width-type-1)) 0 0;
+	inset: 0 calc(100vw - var(--sidebar-width)) 0 0;
 	padding: 20px;
 
 	display: grid;
@@ -32,25 +32,27 @@
 				font-size: 18px;
 				transition: var(--transition-1);
 
-				a {
+				a,
+				button {
+					background: none;
+					border: none;
 					text-decoration: none;
 					color: var(--white);
 					padding: 10px 0;
 					transition: var(--transition-1);
-
-					&:hover {
-						color: var(--color-secondary);
-					}
 				}
 
 				&.active {
-
 					&::before {
 						content: '>';
 						display: inline-block;
 						margin-right: 10px;
 						transform: translateY(-2px);
 					}
+				}
+
+				&:hover * {
+					color: var(--color-secondary);
 				}
 			}
 		}

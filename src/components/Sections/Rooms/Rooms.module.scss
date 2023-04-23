@@ -17,6 +17,7 @@
 	.room_cards {
 		display: grid;
 		grid: 400px / repeat(3, 1fr);
+		grid-auto-rows: 400px;
 		gap: 20px;
 		padding: 0 120px;
 	}
@@ -147,7 +148,6 @@
 	.rooms {
 		.room_cards {
 			grid: 400px/1fr;
-			grid-auto-rows: 400px;
 			padding: 0 20px;
 		}
 	}

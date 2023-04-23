@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import { MainPageLayoutProps } from './MainPageLayout.props';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const MainPageLayout = ({ children }: MainPageLayoutProps): JSX.Element => {
 	return (

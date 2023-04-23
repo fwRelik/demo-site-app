@@ -43,7 +43,7 @@ export const Header = ({ offset = 10, onLanguageButton = true, ...props }: Heade
 			{...props}>
 			<div className='container'>
 				<div className={styles.wrapper}>
-					<a href='#' className={styles.logo}>
+					<a href='/' className={styles.logo}>
 						<Image src='/images/logo.png' height={22} width={125} alt={'Site Logo'} />
 					</a>
 					<nav className={styles.navigation}>

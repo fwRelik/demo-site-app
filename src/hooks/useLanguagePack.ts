@@ -3,9 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ResourceFieldsType, SelectedResourceType, selectLanguage } from '@/features/language/languageSlice';
 
 export default function useLangaugePack() {
-	const { languageResources, selectedResource } = useSelector((state: RootState) => state.languageReducer);
+	const { selectedResource } = useSelector((state: RootState) => state.languageReducer);
+	const {
+		languagePack: { resources },
+	} = useSelector((state: RootState) => state.pagesReducer);
+
 	const dispatch = useDispatch();
-	const languagePackages = Object.keys(languageResources);
+	const languagePackages = Object.keys(resources);
 
 	const changeLanguage = (language: SelectedResourceType) => {
 		if (!languagePackages.some(i => i === language))
@@ -14,7 +18,7 @@ export default function useLangaugePack() {
 	};
 
 	const t = (key: ResourceFieldsType): string => {
-		return languageResources[selectedResource].translation[key];
+		return resources[selectedResource]?.translation[key];
 	};
 
 	return {

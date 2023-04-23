@@ -1,8 +1,8 @@
 .head {
 	position: absolute;
 	background-color: var(--color-ternary);
-	width: calc(100% - var(--width-type-1));
-	height: 60px;
+	width: calc(100vw - var(--sidebar-width));
+	height: var(--userhead-height);
 	top: 0;
 	right: 0;
 	padding: 10px 20px;

@@ -1,3 +1,4 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface WelcomeProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {}
+export interface WelcomeProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+}

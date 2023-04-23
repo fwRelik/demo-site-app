@@ -4,22 +4,31 @@ import { Offers } from '@/components/Sections/Offers/Offers';
 import { Rooms } from '@/components/Sections/Rooms/Rooms';
 import { Welcome } from '@/components/Sections/Welcome/Welcome';
 import { APIUrls } from '@/configs/api.config';
-import { LanguagePackType, updateLanguagePackage } from '@/features/language/languageSlice';
+import { addCurrentPageLang, addRoomPages, createMainPage } from '@/features/pages/pagesSlice';
+import { IMainPage } from '@/interfaces/MainPage.interface';
+import { IRoomPage } from '@/interfaces/RoomPage.interface';
 import { withMainPageLayout } from '@/layout/MainPageLayout/MainPageLayout';
 import axios from 'axios';
 import Head from 'next/head';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export function Home(): JSX.Element {
 	const dispatch = useDispatch();
 
-	// (async () => {
-	// 	const { data } = await axios.get<LanguagePackType>(APIUrls.LanguagePackage);
-	// 	if (!data) return;
+	useEffect(() => {
+		(async () => {
+			try {
+				const { data: MainPageData } = await axios.get<IMainPage>(APIUrls.MainPage);
+				const { data: RoomPagesData } = await axios.get<IRoomPage[]>(APIUrls.RoomPages);
 
-	// 	dispatch(updateLanguagePackage(data));
-	// })();
+				dispatch(createMainPage(MainPageData));
+				dispatch(addRoomPages(RoomPagesData));
+			} catch (ex) {
+				console.error(ex);
+			}
+		})();
+	}, []);
 
 	return (
 		<>
